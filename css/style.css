@@ -187,7 +187,7 @@ header {
 
 /* DESCRIPTION */
 .description .title {
-  margin-top: 30px;
+  margin-top: 0;
   margin-bottom: 10px;
 
   font-weight: 700;
@@ -454,9 +454,7 @@ header {
 }
 
 .poster-text {
-  padding: 20px 24px;
-
-  border-right: 1px solid #eeeeee;
-  border-left: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 24px;
 }

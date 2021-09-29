@@ -10,6 +10,12 @@
   --section-padding: 94px;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Roboto, sans-serif;
   color: var(--primary-text-color);
@@ -17,18 +23,29 @@ body {
   background-color: var(--wite-color);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
 ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 a {
   text-decoration: none;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+address {
+  font-style: normal;
 }
 
 .section {
@@ -39,8 +56,6 @@ a {
 }
 
 .container {
-  display: flex;
-  align-items: center;
   width: 1200px;
   padding-right: 15px;
   padding-left: 15px;
@@ -49,11 +64,12 @@ a {
   margin-left: auto;
 }
 
-.header .section {
-  margin-bottom: 0;
+/* HEADER */
+.header-container {
+  display: flex;
+  align-items: center;
 }
 
-/* HEADER */
 .header a.curent {
   color: var(--accent-color);
 }
@@ -101,17 +117,12 @@ a.link:focus {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 93px;
-
-  /* outline: 2px solid green; */
 }
 
 .contacts {
   display: flex;
-  margin-top: 0;
-  margin-bottom: 0;
+  align-items: center;
   margin-left: auto;
-
-  /* outline: 2px solid green; */
 }
 
 .nav {
@@ -127,9 +138,8 @@ a.link:focus {
   margin: 0;
 }
 
-.header .section {
-  padding-top: 32px;
-  padding-bottom: 32px;
+.header.section {
+  --section-padding: 32px;
 }
 
 header {
@@ -137,16 +147,14 @@ header {
 }
 
 /* HERO */
-.hero-section {
+.hero {
   padding-top: 200px;
   padding-bottom: 200px;
-}
-
-.hero {
   background-color: var(--background-color);
 }
 
 .hero-title {
+  margin-bottom: 30px;
   color: var(--wite-color);
   font-weight: 900;
   font-size: 44px;
@@ -159,7 +167,6 @@ header {
 .button {
   display: block;
 
-  margin-top: 32px;
   margin-right: auto;
   margin-left: auto;
 
@@ -177,10 +184,6 @@ header {
   font-family: inherit;
 }
 
-/* .hero-button {
-  padding-bottom: 200px;
-} */
-
 /* Main */
 
 .title {
@@ -188,6 +191,12 @@ header {
 }
 
 /* DESCRIPTION */
+
+.skills-box {
+  display: flex;
+  align-items: center;
+}
+
 .description .title {
   margin-top: 0;
   margin-bottom: 10px;
@@ -229,26 +238,9 @@ header {
 }
 
 /* WHAT WE DO */
-.what-we-do {
-  padding-top: 0;
-  flex-direction: column;
-  align-items: center;
-}
-
-.section > .second-title {
-  margin-bottom: 50px;
-  margin-top: 0;
-
-  /* outline: 2px solid green; */
-}
 
 .demo-box {
   display: flex;
-  padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .demo-list {
@@ -268,6 +260,10 @@ header {
 /* OUR TEAM */
 
 .second-title {
+  margin-bottom: 50px;
+  margin-top: 0;
+  text-align: center;
+
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
@@ -275,7 +271,14 @@ header {
   letter-spacing: 0.03em;
 }
 
+.team-list-box {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .team .title {
+  margin-bottom: 10px;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
@@ -303,27 +306,15 @@ header {
 }
 
 .team-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
   margin-right: 30px;
-
-  /* outline: 2px solid green; */
+  text-align: center;
+  background-color: var(--wite-color);
+  box-shadow: 0px 2px 1px 0px #00000033, 0px 1px 1px 0px #00000024,
+    0px 1px 3px 0px #0000001f;
 }
 
 .team-list:last-child {
   margin: 0;
-}
-
-.team-list > p {
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-
-.team-list > h3 {
-  margin-top: 30px;
-  margin-bottom: 10px;
 }
 
 /* FOOTER */
@@ -331,12 +322,8 @@ header {
   background-color: var(--background-color);
 }
 
-.footer-box {
-  flex-direction: column;
-  align-items: start;
-
-  padding-top: 60px;
-  padding-bottom: 60px;
+.footer-section.section {
+  --section-padding: 60px;
 }
 
 .footer-section .link {
@@ -357,6 +344,10 @@ header {
   margin-top: 9px;
 
   color: rgba(255, 255, 255, 0.6);
+}
+
+.address-list {
+  margin-bottom: 9px;
 }
 
 .address {
@@ -419,6 +410,8 @@ header {
 }
 
 .button-set {
+  display: flex;
+  align-items: center;
   margin-bottom: 50px;
   padding-bottom: 0;
   justify-content: center;
@@ -433,13 +426,17 @@ header {
 }
 
 .exempls {
+  display: flex;
   flex-wrap: wrap;
   padding-top: 0;
 }
 
 .exemples-list {
+  width: 370px;
   margin-right: 30px;
   margin-bottom: 30px;
+
+  border: 1px solid #eeeeee;
 }
 
 .exemples-list:nth-child(3n) {
@@ -450,14 +447,12 @@ header {
   margin-bottom: 0;
 }
 
-.portfolio img {
+img {
   display: block;
-
-  /* outline: 2px solid green; */
+  max-width: 100%;
+  height: auto;
 }
 
 .poster-text {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 24px;
+  padding: 20px 24px;
 }
